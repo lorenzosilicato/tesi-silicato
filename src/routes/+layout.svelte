@@ -1,3 +1,34 @@
+<script>
+  import { onMount } from "svelte";
+
+  let activeLink = null;
+  let lineDash;
+
+  onMount(() => {
+    lineDash = document.querySelector(".line-dash");
+  });
+
+  const handleMouseOver = (event) => {
+    activeLink = event.target;
+
+    const rect = activeLink.getBoundingClientRect();
+    const menuRect = activeLink.closest('.menu').getBoundingClientRect();
+    const centerX = rect.left - menuRect.left + rect.width / 2;
+
+    lineDash.style.transition = "all 0.3s ease";
+    lineDash.style.transform = `translateX(${centerX}px)`;
+    lineDash.style.width = `${rect.width}px`;
+  };
+
+  const handleMouseOut = () => {
+    activeLink = null;
+
+    lineDash.style.transition = "all 0.3s ease";
+    lineDash.style.transform = "translateX(0)";
+    lineDash.style.width = "0";
+  };
+</script>
+
 <div class="header">
  <div class="menu">
   <svg class="line-top" width="750" height="15" viewbox="0,0 1000,20">
@@ -11,13 +42,13 @@
    />
   </svg>
   <nav class="flex gap-4">
-    <a class="hover:text-gray-300" href="/">
+    <a on:mouseover={handleMouseOver} on:focus on:mouseout={handleMouseOut} on:blur href="/">
       Home
     </a>
-    <a class="hover:text-gray-300" href="/about">
+    <a on:mouseover={handleMouseOver} on:focus on:mouseout={handleMouseOut} on:blur href="/about">
       About
     </a>
-    <a class="hover:text-gray-300" href="/esercizi">
+    <a on:mouseover={handleMouseOver} on:focus on:mouseout={handleMouseOut} on:blur href="/esercizi">
       Company
     </a>
   </nav>
