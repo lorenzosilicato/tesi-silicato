@@ -1,13 +1,7 @@
 <script>
   import "../app.pcss";
-  import {
-    Navbar,
-    NavBrand,
-    NavLi,
-    NavUl,
-    NavHamburger,
-    DarkMode,
-  } from "flowbite-svelte";
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, DarkMode,} from "flowbite-svelte";
+  let btnClass = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-xl p-2';
 </script>
 
 <Navbar let:hidden let:toggle>
@@ -28,7 +22,7 @@
     <NavLi href="/" active={true}>Home</NavLi>
     <NavLi href="/esercizi" active={true}>Esercizi</NavLi>
     <NavLi href="/about" active={true}>About</NavLi>
-    <DarkMode/>
+    <DarkMode {btnClass}/>
   </NavUl>
 </Navbar>
 <main class="p-8 h-auto">
