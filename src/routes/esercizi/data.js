@@ -3,8 +3,8 @@ export const posts = [
 		slug: 'esercizio1',
 		title: 'Esercizio 1',
 		content:
-			'<p>Qui andrebbe inserito il file WebGL dell esercizio</p>'
-	},
+      'https://i.simmer.io/@lorenzosilicato/esercizio1'
+  },
 
 	{
 		slug: 'esercizio2',
