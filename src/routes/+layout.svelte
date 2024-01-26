@@ -7,9 +7,9 @@
 <Navbar let:hidden let:toggle>
   <NavBrand href="/">
     <img
-      src="https://flowbite-svelte.com/images/flowbite-svelte-icon-logo.svg"
+      src="https://upload.wikimedia.org/wikipedia/commons/5/50/Snow_flake.svg"
       class="mr-3 h-6 sm:h-9"
-      alt="Flowbite-Svelte Logo"
+      alt="Logo"
     />
     <span
       class="self-center whitespace-nowrap text-xl font-semibold dark:text-white"
@@ -20,7 +20,7 @@
   <NavHamburger on:click={toggle} />
   <NavUl {hidden}>
     <NavLi href="/" active={true}>Home</NavLi>
-    <NavLi href="/esercizi" active={true}>Esercizi</NavLi>
+    <NavLi href="/esercizi" active={true}>Exercises</NavLi>
     <NavLi href="/about" active={true}>About</NavLi>
     <DarkMode {btnClass}/>
   </NavUl>
